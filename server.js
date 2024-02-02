@@ -7,6 +7,7 @@ const morgan=require('morgan')
 
 const userRoute=require('./routes/userRoute')
 const authRoute=require('./routes/authRoute')
+const postRoute=require('./routes/postRoute')
 
 const dbConnection=require('./dbConnection')
 dbConnection()
@@ -19,6 +20,7 @@ app.use(morgan('common'))
 //routes
 app.use('/api/v1/users', userRoute)
 app.use('/api/v1/auth', authRoute)
+app.use('/api/v1/posts', postRoute)
 
 app.listen(5000, ()=>{
     console.log('Server is running on port 5000');
